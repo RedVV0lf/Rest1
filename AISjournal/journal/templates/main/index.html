@@ -1,0 +1,71 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<!--<script>-->
+<!--    var CSRF_TOKEN = '{{ csrf_token }}';-->
+<!--    console.log(CSRF_TOKEN)-->
+<!--</script>-->
+ {% if user.is_authenticated %}
+          <h1>Привет {{ user.username }}!</h1><br>
+             <form action="http://127.0.0.1:8000/api/v1/auth/logout">
+            <button type="submit">Выход</button>
+             </form><br>
+                {% else %}
+            <h1>Привет</h1><br>
+            <form action="http://127.0.0.1:8000/api/v1/auth/login">
+            <button type="submit">Вход</button>
+                </form><br>
+                {% endif %}
+ <br>
+ <form action="http://127.0.0.1:8000/api/v1/studentlist/">
+<button type="submit">Студент</button>
+</form><br>
+<form action="http://127.0.0.1:8000/api/v1/postlist/">
+<button type="submit">Должность</button>
+</form><br>
+<form action="http://127.0.0.1:8000/api/v1/grouplist/">
+<button type="submit">Группа</button>
+</form><br>
+<form action="http://127.0.0.1:8000/api/v1/colleaguelist/">
+<button type="submit">Сотрудники</button>
+</form><br>
+<form action="http://127.0.0.1:8000/api/v1/preparation_plan_list/">
+<button type="submit">План подготовки</button>
+</form><br>
+<form action="http://127.0.0.1:8000/api/v1/specialitylist/">
+<button type="submit">Специальность</button>
+</form><br>
+<form action="http://127.0.0.1:8000/api/v1/formattestationlist/">
+<button type="submit">Форма аттестация</button>
+</form><br>
+<form action="http://127.0.0.1:8000/api/v1/disciplineslist/">
+<button type="submit">Дисциплина</button>
+</form><br>
+<form action="http://127.0.0.1:8000/api/v1/levelpreparationlist/">
+<button type="submit">Уровень подготовки</button>
+</form><br>
+<form action="http://127.0.0.1:8000/api/v1/groupdisciplineslist/">
+<button type="submit">Дисциплина групп</button>
+</form><br>
+<form action="http://127.0.0.1:8000/api/v1/employeehelplessonlist/">
+<button type="submit">Сотрудник проведенный занятие</button>
+</form><br>
+<form action="http://127.0.0.1:8000/api/v1/classeslist/">
+<button type="submit">Занятия</button>
+</form><br>
+<form action="http://127.0.0.1:8000/api/v1/evaluationclasseslist/">
+<button type="submit">Оценка занятия</button>
+ </form><br>
+ <form action="http://127.0.0.1:8000/api/v1/csrf_cookie">
+<button type="submit">csrf_token</button>
+
+</form><br>
+</body>
+</html>
